@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB ACCESS</title>
+</head>
+<body>
+
+<h1> Редактор базы данных </h1>
+
+
+ {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+
+
+
+<form action="#" method="post">
+
+
+    <p> ДОБАВИТЬ ЗАПИСЬ В ДБ</p>
+   <form method="post" action="{{ url_for('db_edit.add_to_db_form') }}">
+    {{ add_to_db_form.csrf_token }}
+    {{ add_to_db_form.category.label}}
+    {{ add_to_db_form.category }}
+    {{ add_to_db_form.type.label }}
+    {{ add_to_db_form.type }}
+    {{ add_to_db_form.name.label }}
+    {{ add_to_db_form.name }}
+    {{ add_to_db_form.description.label }}
+    {{ add_to_db_form.description(cols=50, rows=10) }}
+
+       {{ add_to_db_form.description2.label }}
+    {{ add_to_db_form.description2(cols=50, rows=10) }}
+
+
+
+
+
+     <p><button type="submit"> Добавить запись  </button></p>
+
+</form>
+
+</body>
+</html>
