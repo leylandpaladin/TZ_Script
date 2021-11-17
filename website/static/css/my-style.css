@@ -1,0 +1,17 @@
+
+
+#main-form{
+    width: 100%;    
+    transition:  0.5s;
+}
+#main-form .form-row .col{
+    display: grid;
+}
+
+#main-form label{
+    margin-bottom: 0px;
+}
+#main-form select,
+#main-form input{
+    margin-bottom: 1rem;
+}
