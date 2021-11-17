@@ -1,0 +1,9 @@
+# flask_session/*
+*/.db
+/.idea/*
+/website/.vscode/*
+/website/__pycache__/*
+/website/__init__.pyc
+Database.py
+Constructor.py
+database_tests.py
